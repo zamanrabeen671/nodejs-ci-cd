@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /home/ubuntu/cat/cat_backend
+
+hooks:
+  ApplicationStart:
+    - location: /scripts/start.sh
+      timeout: 3000
+      runas: ubuntu
+  ApplicationStop:
+    - location: /scripts/stop.sh
+      runas: ubuntu
